@@ -1,0 +1,58 @@
+{
+    "name": "@daniel/eslint-config",
+    "version": "2.0.0",
+    "license": "MIT",
+    "exports": {
+        ".": "./dist/index.js",
+        "./service": "./dist/src/service.js",
+        "./service-members-sort": "./dist/src/service-with-members-sort.js",
+        "./asset-mapping": "./dist/src/asset-mapping.js",
+        "./cli": "./dist/src/cli.js",
+        "./cli-members-sort": "./dist/src/cli-with-members-sort.js"
+    },
+    "main": "dist/index.js",
+    "files": [
+        "*.md",
+        "dist/**/*",
+        "index.ts",
+        "src/**",
+        "test/**",
+        "tsconfig.json"
+    ],
+    "scripts": {
+        "build": "yarn compile",
+        "build-manually": "rm -rf dist;tsc --build",
+        "compile": "echo please run build-manually and push to git",
+        "coverage": "jest --coverage --runInBand",
+        "lbuild": "lerna run --scope @daniel/eslint-config build",
+        "lint": "eslint '{src/**/*.ts,index.ts,test/**/*.ts}' --fix --report-unused-disable-directives",
+        "llint": "lerna run --scope @daniel/eslint-config lint",
+        "ltest": "lerna run --scope @daniel/eslint-config test",
+        "miti-fix": "miti-dev ts fix",
+        "test": "echo \"no test needed\"",
+        "watch": "tsc --watch"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.34.0",
+        "@typescript-eslint/parser": "^5.34.0",
+        "eslint": "^8.22.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-find-rules": "^4.1.0",
+        "eslint-import-resolver-typescript": "^3.5.2",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jest": "^26.8.7",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-sort-class-members": "^1.14.1",
+        "prettier": "^2.8.1"
+    },
+    "devDependencies": {
+        "typescript": "^4.7.4"
+    },
+    "engines": {
+        "node": "^16.0.0"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    }
+}

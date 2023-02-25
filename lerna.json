@@ -1,0 +1,13 @@
+{
+  "packages": [
+    "packages/**"
+  ],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "registry": "https://gitlab.com/api/v4/projects/26674407/packages/npm/"
+    }
+  }
+}

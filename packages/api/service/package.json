@@ -1,0 +1,67 @@
+{
+    "name": "@daniel/api",
+    "version": "2.0.1",
+    "license": "ISC",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "bin": {
+        "api": "./dist/index.js"
+    },
+    "files": [
+        "dist/**/*",
+        "index.ts",
+        "src/**",
+        "test/**",
+        "tsconfig.json"
+    ],
+    "scripts": {
+        "build": "lerna run --scope @daniel/api  --include-dependents compile",
+        "compile": "rm -rf ./dist; tsc --build",
+        "coverage": "jest --coverage --runInBand",
+        "lbuild": "yarn build",
+        "lint": "eslint '{src/**/*.ts,index.ts,test/**/*.ts}' --fix --report-unused-disable-directives",
+        "llint": "lerna run --scope @daniel/api lint",
+        "ltest": "lerna run --scope @daniel/api test",
+        "miti-fix": "miti-dev ts fix",
+        "start": "ts-node index.ts",
+        "test": "jest --runInBand",
+        "watch": "tsc --watch"
+    },
+    "dependencies": {
+				"@daniel/common-types": "^2.0.0",
+        "@fastify/cors": "^8.2.0",
+        "axios": "^0.24.0",
+        "fastify": "^4.0.0",
+        "hash-sum": "^2.0.0",
+        "jsonschema": "^1.4.0",
+        "lodash": "^4.17.21",
+        "minimist": "^1.2.5",
+        "mongodb": "^4.2.2",
+        "qs": "^6.11.0",
+        "readdirp": "^3.6.0",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@daniel/eslint-config": "^2.0.0",
+        "@types/hash-sum": "^1.0.0",
+        "@types/jest": "^27.0.3",
+        "@types/lodash": "^4.14.178",
+        "@types/minimist": "^1.2.2",
+        "@types/node": "^16.11.12",
+        "@types/uuid": "^8.3.3",
+        "jest": "^27.4.4",
+        "jest-junit": "^13.0.0",
+        "jest-mock-extended": "^2.0.4",
+        "portfinder": "1.0.28",
+        "ts-jest": "^27.1.1",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.2"
+    },
+    "engines": {
+        "node": "^16.0.0"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "gitHead": "2fd2fed954f0279142db7a3117fce82e67b86a02"
+}

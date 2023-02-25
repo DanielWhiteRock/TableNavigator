@@ -1,0 +1,8 @@
+<h3>Table Example</h3>
+<table class="symbolTable">
+  <tr *ngFor="let f of [].constructor(rows); let r = index">
+    <td class="gridCell" *ngFor="let col of [].constructor(columns); let c = index">
+      {{data}}
+    </td>
+  </tr>
+</table>

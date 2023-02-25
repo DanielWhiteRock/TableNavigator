@@ -1,0 +1,44 @@
+{
+    "name": "@daniel/common-types",
+    "version": "2.0.0",
+
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/**/*",
+        "index.ts",
+        "src/**",
+        "test/**",
+        "tsconfig.json"
+    ],
+    "scripts": {
+        "build": "lerna run --scope @daniel/common-types  --include-dependents compile",
+        "compile": "rm -rf ./dist; tsc --build",
+        "coverage": "jest --coverage --runInBand",
+        "lbuild": "yarn build",
+        "lint": "eslint '{src/**/*.ts,index.ts,test/**/*.ts}' --fix --report-unused-disable-directives",
+        "llint": "lerna run --scope @daniel/common-types lint",
+        "ltest": "lerna run --scope @daniel/common-types test",
+        "miti-fix": "miti-dev ts fix",
+        "start": "ts-node index.ts",
+        "test": "echo just types no tests",
+        "watch": "tsc --watch"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "@types/jest": "^27.0.3",
+        "@types/node": "^16.11.12",
+        "jest": "^27.4.4",
+        "ts-jest": "^27.1.1",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.2"
+    },
+    "engines": {
+        "node": "^16.0.0"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    }
+}
