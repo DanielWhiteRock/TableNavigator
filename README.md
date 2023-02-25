@@ -6,6 +6,7 @@ An angular + NodeJs tables navigator
 
 Use the package manager [yarn](https://yarnpkg.com/) to install.
 
+On root folder
 ```bash
 yarn install
 ```
